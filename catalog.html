@@ -9,7 +9,7 @@
 	<title>Гостиницы Седоны</title>
 </head>
 
-<body>
+<body class="page__body">
 	<header class="page__header">
 		<div class="header__container">
 			<nav class="header__nav nav">
@@ -28,18 +28,19 @@
 					</li>
 				</ul>
 				<div class="nav__user">
-					<a href="#" class="user__button"><span class="visually-hidden">Поиск</span></a>
-					<a href="#" class="user__button"><span class="visually-hidden">Избанное</span></a>
-					<a href="#" class="user__button button">ХОЧУ СЮДА!</a>
+					<a href="#" class="icon__button user__search"><span class="visually-hidden">Поиск</span></a>
+					<a href="#" class="icon__button user__like"><span class="visually-hidden">Избанное</span></a>
+					<a href="#" class="user__button button button-secondary">ХОЧУ СЮДА!</a>
 				</div>
 			</nav>
 		</div>
 	</header>
 
-
+	<!-- ==============MAIN============================= -->
 	<main class="main__container main__catalog">
 		<div class="catalog__header-image">
 			<div class="page__container-catalog">
+				<!-- ============ШАПКА КАТАЛОГА============ -->
 				<section class="catalog__header">
 					<h1 class="catalog__title">Гостиницы Седоны</h1>
 					<ul class="catalog__breadcrumbs">
@@ -47,6 +48,7 @@
 						<li class="breadcrumbs__item"><a class="breadcrumbs__link">Гостиницы</a></li>
 					</ul>
 				</section>
+				<!-- ============ФИЛЬТРЫ КАТАЛОГА ====================-->
 				<section class="catalog__filter">
 					<h2 class="visually-hidden">Выбор гостиницы</h2>
 					<form action="https://echo.htmlacademy.ru/" class="filter__form" method="get">
@@ -121,6 +123,7 @@
 						</div>
 					</form>
 				</section>
+
 			</div>
 		</div>
 
