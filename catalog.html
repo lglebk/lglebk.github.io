@@ -44,11 +44,17 @@
 				<section class="catalog__header">
 					<h1 class="catalog__title">Гостиницы Седоны</h1>
 					<ul class="catalog__breadcrumbs">
-						<li class="breadcrumbs__item"><a href="/index.html" class="breadcrumbs__link"><span
-									class="visually-hidden">Домашняя</span></a></li>
-						<li class="breadcrumbs__item"><a class="breadcrumbs__link">Гостиницы</a></li>
+						<li class="breadcrumbs__item">
+							<a href="/index.html" class="breadcrumbs__link">
+								<span class="visually-hidden">Домашняя</span>
+							</a>
+						</li>
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link">Гостиницы</a>
+						</li>
 					</ul>
 				</section>
+
 				<!-- ============ФИЛЬТРЫ КАТАЛОГА ====================-->
 				<section class="catalog__filter">
 					<h2 class="visually-hidden">Выбор гостиницы</h2>
@@ -58,23 +64,23 @@
 						<!-- ======= ФИЛЬТР ИНФРАСТРУКТУРА ============= -->
 						<fieldset class="filter__group">
 							<legend class="filter__subtitle">Инфраструктура:</legend>
+
 							<ul class="filter__list">
 								<li class="filter__item">
 									<label class="facility">
-										<input type="checkbox" name="swimming-pool" class="facility__input visually-hidden"
-											checked>
+										<input type="checkbox" name="swimming-pool" class="filter__input" checked>
 										<span class="facility__label">Бассейн</span>
 									</label>
 								</li>
 								<li class="facility__item">
 									<label class="facility">
-										<input type="checkbox" name="parking" class="facility__input visually-hidden" checked>
+										<input type="checkbox" name="parking" class="filter__input" checked>
 										<span class="facility__label">Парковка</span>
 									</label>
 								</li>
 								<li class="facility__item">
 									<label class="facility">
-										<input type="checkbox" name="wi-fi" class="facility__input visually-hidden">
+										<input type="checkbox" name="wi-fi" class="filter__input">
 										<span class="facility__label">Wi-Fi</span>
 									</label>
 								</li>
@@ -84,22 +90,23 @@
 						<!-- =======ФИЛЬТР ТИП ЖИЛЬЯ ================ -->
 						<fieldset class="filter__group">
 							<legend class="filter__subtitle">Тип жилья:</legend>
+
 							<ul class="filter__list">
 								<li class="filter__item">
 									<label class="type">
-										<input type="radio" name="hotel" class="type__input visually-hidden" checked>
+										<input type="radio" name="hotel" class="filter__input" checked>
 										<span class="type__label">Гостиница</span>
 									</label>
 								</li>
 								<li class="filter__item">
 									<label class="type">
-										<input type="radio" name="motel" class="type__input visually-hidden">
+										<input type="radio" name="motel" class="filter__input">
 										<span class="type__label">Мотель</span>
 									</label>
 								</li>
 								<li class="filter__item">
 									<label class="type">
-										<input type="radio" name="apartaments" class="type__input visually-hidden">
+										<input type="radio" name="apartaments" class="filter__input">
 										<span class="facility__label">Апартаменты</span>
 									</label>
 								</li>
@@ -107,30 +114,35 @@
 						</fieldset>
 
 						<!-- ==========ФИЛЬТР СТОИМОСТЬ ================= -->
-						<fieldset class="filter__group">
+						<fieldset class="filter__group filter__group-price">
 							<legend class="filter__subtitle">Стоимость, ₽:</legend>
-							<label>
-								<span>от</span>
-								<input type="number" class="filter__input filter__input-price" name="min-price" value="0"
-									min="0" max="10000">
-							</label>
-							<label>
-								<span>до</span>
-								<input type="number" class="filter__input filter__input-price" name="max-price" value="9000"
-									min="0" max="10000">
-							</label>
-							<div class="filter__slider">
-								<button class="filter__price">
-									<span class="visually-hidden">Минимальная стоимость гостиницы</span>
-								</button>
-								<button class="filter__price">
-									<span class="visually-hidden">Максимальная стоимость гостиницы</span>
-								</button>
+
+							<div class="filter__range range">
+								<label class="range__field">
+									<span class="range__title">от</span>
+									<input type="number" class="range__input" name="min-price" value="0" min="0" max="10000">
+								</label>
+
+								<label class="range__field">
+									<span class="range__title">до</span>
+									<input type="number" class="range__input" name="max-price" value="9000" min="0" max="10000">
+								</label>
+
+								<div class="range__slider slider">
+									<div class="slider__bar">
+										<button class='slider__pin' type="button">
+											<span class="visually-hidden">Минимальная стоимость гостиницы</span>
+										</button>
+										<button class='slider__pin' type="button">
+											<span class="visually-hidden">Максимальная стоимость гостиницы</span>
+										</button>
+									</div>
+								</div>
 							</div>
 						</fieldset>
 
 						<div class="filter__buttons">
-							<button class="filter__button button" type="submit">Применить</button>
+							<button class="button" type="submit">Применить</button>
 							<button class="filter__button-empty" type="reset">Сбросить</button>
 						</div>
 					</form>
@@ -143,98 +155,143 @@
 
 			<!-- ==================ШАПКА НАЙДЕНО ГОСТИНИЦ ================== -->
 			<div class="sorting__list">
-				<p>Найдено гостиниц: <span class="filter__founded">38</span></p>
+				<p class="section__title catalog__title">Найдено гостиниц: 38</p>
+
 				<h3 class="visually-hidden">Сортировка и отображение</h3>
-				<details class="select__sorting">
+				<details class="select catalog__select">
 					<summary class="select__button">Сначала дешёвые</summary>
+
 					<ul class="select__list">
 						<li class="select__item select__item-active">
 							<a href="#" class="select__option">Сначала дешёвые</a>
 						</li>
-						<li class="select__item select__item-active">
+						<li class="select__item">
 							<a href="#" class="select__option">Сначала дорогие</a>
 						</li>
-						<li class="select__item select__item-active">
+						<li class="select__item">
 							<a href="#" class="select__option">Сначала популярные</a>
 						</li>
-						<li class="select__item select__item-active">
+						<li class="select__item">
 							<a href="#" class="select__option">Сначала комфортные</a>
 						</li>
 					</ul>
 				</details>
+
 				<ul class="view">
-					<li class="view__item"><a href="#" class="sorting__view-link"><span
-								class="sorting__view visually-hidden">Плитка</span></a></li>
-					<li class="view__item"><a href="#" class="sorting__view-link"><span
-								class="sorting__view visually-hidden"></span><span class="sorting__view visually-hidden">По
-								одному</span></a></li>
-					<li class="view__item"><a href="#" class="sorting__view-link"><span
-								class="sorting__view visually-hidden"><span
-									class="sorting__view visually-hidden">Список</span></a></li>
+					<li class="view__item view__item-active">
+						<a href="#" class="sorting__view-link">
+							<span class="visually-hidden">Плитка</span>
+						</a>
+					</li>
+					<li class="view__item">
+						<a href="#" class="sorting__view-link">
+							<span class="visually-hidden">По одному</span>
+						</a>
+					</li>
+					<li class="view__item">
+						<a href="#" class="sorting__view-link">
+							<span class="visually-hidden">Список</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 
 
-			<h3 class="visually-hidden">Предлагаемый список гостиниц</h3>
 			<!-- ==================== ИНТЕРНЕТ-МАГАЗИН ====================== -->
-			<ul class="offer__list">
+			<div class="offer__list">
+				<h3 class="visually-hidden">Предлагаемый список гостиниц</h3>
 
-				<li class="offer__item">
-					<h4 class="offer__title"><a href="" class="offer__link">Amara Resort & Spa</a></h4>
+				<article class="offer__item">
+					<h4 class="offer__title">
+						<a href="#" class="offer__link">Amara Resort & Spa</a>
+					</h4>
+
 					<img src="/img/hotel-1-1 (1).jpg" alt="Изображение гостиницы Amara Resort & Spa." class="offer__img"
 						width="300" height="206">
+
 					<p class="offer__subtitle">
 						<span class="offer__type">Гостиница</span>
 						<span class="offer__price">От 4000 ₽</span>
 					</p>
+
 					<a href="#" class="offer__details button button-secondary">Подробнее</a>
 					<a href="#" class="offer__liked button">В избранное</a>
-					<p class="visually-hidden">4 звезды</p>
-					<span class="offer__rating">Рейтинг:</span><span class="offer__estimate">8,5</span>
-				</li>
 
-				<li class="offer__item">
-					<h4 class="offer__title"><a href="" class="offer__link">Desert Quail Inn</a></h4>
+					<p class="offer__stars stars-four">
+						<span class="visually-hidden">4 звезды</span>
+					</p>
+					<p class="offer__rating">Рейтинг: 8,5</p>
+				</article>
+
+
+				<article class="offer__item">
+					<h4 class="offer__title">
+						<a href="" class="offer__link">Desert Quail Inn</a>
+					</h4>
+
 					<img src="/img/hotel-1-2 (1).jpg" alt="Изображение гостиницы Desert Quail Inn." class="offer__img"
 						width="300" height="206">
+
 					<p class="offer__subtitle">
 						<span class="offer__type">Гостиница</span>
 						<span class="offer__price">От 3000 ₽</span>
 					</p>
+
 					<a href="#" class="offer__details button button-secondary">Подробнее</a>
 					<a href="#" class="offer__liked button">В избранное</a>
-					<p class="visually-hidden">3 звезды</p>
-					<span class="offer__rating">Рейтинг:</span><span class="offer__estimate">8,9</span>
-				</li>
 
-				<li class="offer__item">
-					<h4 class="offer__title"><a href="" class="offer__link">Villas at Poco Diablo</a></h4>
+					<p class="offer__stars stars-three">
+						<span class="visually-hidden">3 звезды</span>
+					</p>
+					<p class="offer__rating">Рейтинг:8,9</p>
+				</article>
+
+
+				<article class="offer__item">
+					<h4 class="offer__title">
+						<a href="" class="offer__link">Villas at Poco Diablo</a>
+					</h4>
+
 					<img src="/img/hotel-1-3 (1).jpg" alt="Изображение гостиницы Villas at Poco Diablo." class="offer__img"
 						width="300" height="206">
+
 					<p class="offer__subtitle">
 						<span class="offer__type">Гостиница</span>
 						<span class="offer__price">От 2000 ₽</span>
 					</p>
+
 					<a href="#" class="offer__details button button-secondary">Подробнее</a>
 					<a href="#" class="offer__liked button">В избранное</a>
-					<p class="visually-hidden">2 звезды</p>
-					<span class="offer__rating">Рейтинг:</span><span class="offer__estimate">9,2</span>
-				</li>
 
-				<li class="offer__item">
-					<h4 class="offer__title"><a href="" class="offer__link">GreenTree Inn</a></h4>
+					<p class="offer__stars stars-two">
+						<span class="visually-hidden">2 звезды</span>
+					</p>
+					<p class="offer__rating">Рейтинг:9,2</p>
+				</article>
+
+				<article class="offer__item">
+					<h4 class="offer__title">
+						<a href="" class="offer__link">GreenTree Inn</a>
+					</h4>
+
 					<img src="/img/hotel-1 (1).jpg" alt="Изображение гостиницы GreenTree Inn." class="offer__img" width="300"
 						height="206">
+
 					<p class="offer__subtitle">
 						<span class="offer__type">Гостиница</span>
 						<span class="offer__price">От 3000 ₽</span>
 					</p>
+
 					<a href="#" class="offer__details button button-secondary">Подробнее</a>
 					<a href="#" class="offer__liked button">В избранное</a>
-					<p class="visually-hidden">2 звезды</p>
-					<span class="offer__rating">Рейтинг:</span><span class="offer__estimate">9,2</span>
-				</li>
-			</ul>
+
+					<p class="offer__stars stars-two">
+						<span class="visually-hidden">2 звезды</span>
+					</p>
+					<p class="offer__rating">Рейтинг:9,2</p>
+				</article>
+
+			</div>
 
 			<div class="pagination__button">
 				<button class="button button-large pagination__show-more" type="button">Загрузить ещё</button>
@@ -242,12 +299,12 @@
 
 
 			<!-- ================ ПАГИНАЦИЯ ============================== -->
-			<h3 class="visually-hidden">Список страниц</h3>
 			<div class="pagination">
+				<h3 class="visually-hidden">Список страниц</h3>
 
 				<ul class="pagination__list">
 					<li class="pagination__item">
-						<a class="pagination__link pagination-current">1</a>
+						<a class="pagination__link pagination__item-active" href="#">1</a>
 					</li>
 					<li class="pagination__item">
 						<a class="pagination__link" href="#">2</a>
@@ -268,19 +325,21 @@
 
 				<div class="pagination__select">
 					<p class="pagination__select-text">Гостиниц на странице:</p>
+
 					<details class="select">
 						<summary class="select__button">4</summary>
+
 						<ul class="select__menu">
 							<li class="select__item select__item-active">
 								<a href="#" class="select__option">5</a>
 							</li>
-							<li class="select__item select__item-active">
+							<li class="select__item">
 								<a href="#" class="select__option">6</a>
 							</li>
-							<li class="select__item select__item-active">
+							<li class="select__item">
 								<a href="#" class="select__option">9</a>
 							</li>
-							<li class="select__item select__item-active">
+							<li class="select__item">
 								<a href="#" class="select__option">12</a>
 							</li>
 						</ul>
@@ -295,7 +354,8 @@
 			<p class='section__description'>Только полезная информация и никакого спама, честное бойскаутское!</p>
 
 			<form action="https://echo.htmlacademy.ru/" method="post" class="subscribe__form">
-				<label>
+
+				<label class="subscribe__field field">
 					<span class="visually-hidden">Ваш e-mail</span>
 					<input class="field__input" type="email" name="subscribe__email" placeholder="Ваш e-mail">
 				</label>
