@@ -178,6 +178,21 @@ a {
   box-sizing: border-box;
 }
 
+.icon__button {
+	position: relative;
+	outline: blue solid 1px;
+}
+
+.icon__button svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	fill: #000;
+}
+
 .user__search {
   min-width: 18px;
   min-height: 18px;
@@ -197,10 +212,8 @@ a {
 /* -------------FOOTER--------- */
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr max-content 115px;
-  gap: 30px;
-  padding: 30px 72px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__social {
@@ -219,11 +232,24 @@ a {
 .social__link {
   width: 20px;
   height: 16px;
+  position: relative;
+  outline: green 1px solid;
 }
 
 .social__link:not(:last-child) {
   margin-right: 30px;
   margin-bottom: 30px;
+}
+
+.social__img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	fill: #83B3D3;
+
 }
 
 .footer__phone {
@@ -620,7 +646,30 @@ margin: 4px;
 	height: 48px;
 }
 
-.sorting__view {
+.view__item:first-child .sorting__view-link {
+	background-image: url(/img/icon/mode-tile.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.view__item:nth-child(2) .sorting__view-link {
+	background-image: url(/img/icon/mode-slideshow.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.view__item:nth-child(3) .sorting__view-link {
+	background-image: url(/img/icon/mode-list.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.sorting__view-link {
+	border: #E6E6E6 solid 2px;
+	border-radius: 4px;
+}
+
+.sorting__view-link:hover,
+.sorting__view-link:focus {
+	border-color: #83B3D3;
 }
 
 /* -----------------OFFER CARDS----------- */
