@@ -63,8 +63,32 @@ a {
   border-style: none;
 }
 
+.button:hover {
+	background-color: #68A2CA;
+}
+.button:focus {
+	background-color: #68A2CA;
+	border: #756257 3px solid;
+	border-radius: 4px;
+}
+
+.button:active {
+	color: rgba(255, 255, 255, 0.3);
+}
+
 .button-secondary {
   background-color: #756257;
+}
+
+.button-secondary:hover {
+  background-color: #615048;
+}
+
+.button-secondary:focus {
+  background-color: #615048;
+  border: #83B3D3 3px solid;
+  border-radius: 4px;
+  outline: none;
 }
 
 .button-large {
@@ -164,9 +188,31 @@ a {
   /* margin-right: 34px; */
 }
 
+.nav__item {
+	position: relative;
+}
+
 .nav__link {
   display: block;
   padding: 20px 17px;
+}
+
+.nav__link:hover {
+	color: #756257;
+}
+
+.nav__link:active{
+	color: rgba(117, 98, 87, 0.3);
+}
+
+.nav__link-current::before {
+	content: "";
+	position: absolute;
+	right: 17px;
+	left: 17px;
+	background-color: #756257;
+	height: 2px;
+	bottom: 2px ;
 }
 
 .nav__user {
@@ -180,8 +226,10 @@ a {
 
 .icon__button {
 	position: relative;
-	outline: blue solid 1px;
+	width: 42px;
+	height: 66px;
 }
+
 
 .icon__button svg {
 	position: absolute;
@@ -193,9 +241,30 @@ a {
 	fill: #000;
 }
 
+.icon__button:hover .svg {
+	fill: #756257;
+}
+
+.icon__button:focus .svg {
+	fill: none;
+	outline: none;
+}
+
+.icon__button:active .svg {
+	fill: #756257;
+	outline: none;
+	opacity: 0.3;
+}
+
+
+.user__like {
+	margin-right: 20px;
+}
+
+
 .user__search {
-  min-width: 18px;
-  min-height: 18px;
+	min-width: 18px;
+	min-height: 18px;
 }
 
 .user__button {
