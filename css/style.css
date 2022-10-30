@@ -148,7 +148,6 @@ a {
   font-size: 22px;
   margin: 0;
   line-height: 26px;
-  padding: 0 240px;
 }
 
 /* ----------HEADER --------------- */
@@ -281,20 +280,30 @@ a {
 /* -------------FOOTER--------- */
 
 .footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .footer__social {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 107px;
 }
 
 .social {
+	grid-column: 1/2;
+	display: flex;
+	flex-wrap: wrap;
+	width: 107px;
+	outline: red 1px solid;
 }
 
-.social__item:not(:nth-child(3n)) {
+.social__item {
+	outline: red 1px solid;
+	width: 20px;
+	height: 16px;
+}
+
+.social__item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -302,32 +311,37 @@ a {
   width: 20px;
   height: 16px;
   position: relative;
-  outline: green 1px solid;
+  outline: red 1px solid;
 }
 
 .social__link:not(:last-child) {
-  margin-right: 30px;
-  margin-bottom: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
 }
 
-.social__img {
+.social__link svg {
+	outline: red 1px solid;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	margin: auto;
+	width: 20px;
+	height: 16px;
 	fill: #83B3D3;
-
 }
 
 .footer__phone {
+	grid-column: 2/3;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
+  justify-self: center;
 }
 
 .footer__logo {
+	grid-column: 3/4;
   justify-self: end;
 }
 
@@ -385,8 +399,19 @@ a {
 }
 
 .reasons__head {
-  padding: 62px 240px 80px;
+  padding: 62px 230px 80px;
+  position: relative;
 }
+
+.reasons__head::before {
+	position: absolute;
+	content: '';
+	background-image: url(/img/white-polygon.svg);
+	top: -57px;
+	left: 0;
+	width: 1200px;
+	height: 57px;
+} 
 
 .reasons__list {
   display: grid;
@@ -394,17 +419,60 @@ a {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  counter-reset: count;
 }
 
 .reasons__list-inner {
-  grid-column: 1 / -1;
-  background-color: #fff;
-  color: #333333;
+	grid-column: 1 / -1;
+	background-color: #fff;
+	color: #333333;
 }
 
 .reasons__item {
-  background: rgba(131, 179, 211, 0.12);
-  padding: 60px;
+	background: rgba(131, 179, 211, 0.12);
+	padding: 60px;
+	counter-increment: count;
+	position: relative;
+}
+
+.reasons__list-inner .reasons__item:nth-child(3n) .reasons__title::before {
+	background-image:url(/img/gift.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	content:'';
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 130px;
+	margin: auto;
+	width: 75px;
+	height: 76px;
+}
+.reasons__list-inner .reasons__item:nth-child(2n) .reasons__title::before {
+	background-image:url(/img/burger.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	content:'';
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 130px;
+	margin: auto;
+	width: 75px;
+	height: 72px;
+}
+.reasons__list-inner .reasons__item:first-child .reasons__title::before {
+	background-image:url(/img/house.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	content:'';
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 130px;
+	margin: auto;
+	width: 75px;
+	height: 72px;
 }
 
 .reasons__item:not(.reasons__item-accent):nth-child(even) {
@@ -428,10 +496,40 @@ a {
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.reasons__list-inner .reasons__item .reasons__title {
+	padding: 124px 15px 0;
+	margin-bottom: 20px;
+	margin: 0;
+}
+.reasons__list-inner .reasons__item .reasons__text {
+	padding-bottom: 19px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+.reasons__description .reasons__title {
+	margin-bottom: 81px;
 }
 
 .reasons__description {
-  padding: 60px;
+	padding: 71px 90px 71px;
+	position: relative;
+}
+.reasons__description::after {
+	content: '- №'counter(count)' -';
+	position: absolute;
+	top: 190px;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	margin: auto;
+	font-size: 18px;
+	font-weight: 400;
+	outline: red 1px solid;
 }
 
 .reasons__text {
@@ -481,6 +579,8 @@ a {
   font-size: 18px;
   line-height: 26px;
   border-style: none;
+  padding: 20px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .subscribe__button {
@@ -702,7 +802,6 @@ padding: 0;
 	max-width: 224px;
 	margin: -4px;
 	padding: 0;
-	outline: red 1px solid;
 }
 
 .view__item {
