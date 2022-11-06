@@ -668,6 +668,7 @@ a {
 .select__button::-webkit-details-marker {
 	display: none;
 }
+
 .select__button::after {
 	content: '';
 	position: absolute;
