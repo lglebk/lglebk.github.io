@@ -70,7 +70,7 @@
 						<h3 class="reasons__title">Настоящий <br> городок</h3>
 						<p class="reasons__text">Седона — не аттракцион <br>для туристов, там течёт<br> своя жизнь</p>
 					</div>
-					<img class="reasons__img" src="/img/photo-1 (1).jpg" alt="Фотография городского пейзажа" width="800"
+					<img class="reasons__img" src="/img/photo-1.jpg" alt="Фотография городского пейзажа" width="800"
 						height="384">
 
 					<ul class="reasons__list-inner">
@@ -95,8 +95,7 @@
 						<h3 class="reasons__title">Там есть <br> мост дьявола</h3>
 						<p class="reasons__text">Да, по нему можно пройти! <br> Если вы осмелитесь, <br> разумеется</p>
 					</div>
-					<img class="reasons__img" src="/img/photo-2 (1).jpg" alt="Фотография моста Дьявола" width="800"
-						height="384">
+					<img class="reasons__img" src="/img/photo-2.jpg" alt="Фотография моста Дьявола" width="800" height="384">
 				</li>
 
 				<li class="reasons__item">
@@ -191,6 +190,44 @@
 			</svg>
 		</a>
 	</footer>
+
+	<div class="modal__container">
+		<section class="modal modal__booking">
+			<h2 class="modal__title section__title">Поиск гостиницы в Седоне</h2>
+			<button class="modal__close-button"><span class="visually-hidden">Закрыть</span></button>
+			<br>
+			<form action="https://echo.htmlacademy.ru/" class="modal__form" method="post">
+				<label class="modal__label">Дата заезда:
+					<input type="date" class="modal__input modal__arriving field__input">
+				</label>
+				<p class="modal__description modal__description-error">Мы не можем отправить вас в прошлое.</p>
+				<p>
+					<label class="modal__label">Дата выезда:
+						<input type="date" class="modal__input modal__leaving field__input">
+					</label>
+				</p>
+				<p class="modal__description modal__description-error">На эти даты есть свободные номера. Пока
+					есть.</p>
+				<p>
+					<label class="modal__label">Взрослые:
+						<input type="number" class="modal__input modal__quantity field__input">
+					</label>
+
+
+					<label class="modal__label">Дети:
+						<button class="modal__info">
+							<span class="visually-hidden">Укажите количество детей, которые будут с
+								вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+							</span>
+						</button>
+						<input type="number" class="modal__input modal__quantity field__input">
+					</label>
+				</p>
+
+				<button type="submit" class="button button-large">Найти</button>
+			</form>
+		</section>
+	</div>
 </body>
 
 </html>
