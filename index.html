@@ -135,7 +135,7 @@
 		<!-- ===================== Подпишитесь на рассылку ================= -->
 		<section class="main__subscribe subscribe">
 			<h2 class="section__title">Подпишитесь на рассылку</h2>
-			<p class='section__description'>Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
+			<p class="section__description">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
 
 			<form action="https://echo.htmlacademy.ru/" method="post" class="subscribe__form">
 				<label class="subscribe__field field">
@@ -197,34 +197,35 @@
 			<button class="modal__close-button"><span class="visually-hidden">Закрыть</span></button>
 			<br>
 			<form action="https://echo.htmlacademy.ru/" class="modal__form" method="post">
-				<label class="modal__label">Дата заезда:
-					<input type="date" class="modal__input modal__arriving field__input">
-				</label>
-				<p class="modal__description modal__description-error">Мы не можем отправить вас в прошлое.</p>
-				<p>
-					<label class="modal__label">Дата выезда:
-						<input type="date" class="modal__input modal__leaving field__input">
-					</label>
-				</p>
-				<p class="modal__description modal__description-error">На эти даты есть свободные номера. Пока
-					есть.</p>
-				<p>
-					<label class="modal__label">Взрослые:
-						<input type="number" class="modal__input modal__quantity field__input">
-					</label>
+				<label class="modal__label modal__label-arriving" for="arriving">Дата заезда:</label>
+				<input class="modal__input modal__arriving field__input" type="date" name="arriving" required>
+
+				<span class="modal__description modal__description-arriving modal__description-error">Мы не можем отправить
+					вас в прошлое.</span>
+
+				<label class="modal__label modal__label-leaving" name="leaving">Дата выезда:</label>
+				<input type="date" class="modal__input modal__leaving field__input" name="leaving" required>
+				<span class="modal__description modal__description-leaving">На эти даты есть
+					свободные номера. Пока
+					есть.</span>
+
+				<label class="modal__label modal__label-adults" for="adults">Взрослые:</label>
+				<input class="modal__input modal__quantity field__input" type="number" name="adults" required>
 
 
-					<label class="modal__label">Дети:
-						<button class="modal__info">
-							<span class="visually-hidden">Укажите количество детей, которые будут с
+				<label class="modal__label modal__label-kids" for="kids">Дети:
+					<button class="modal__info">
+						<div class="modal__info-active">
+							<span class="">Укажите количество детей, которые будут с
 								вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
 							</span>
-						</button>
-						<input type="number" class="modal__input modal__quantity field__input">
-					</label>
-				</p>
+						</div>
+					</button>
+				</label>
+				<input type="number" class="modal__input modal__quantity modal__quantity-kids field__input" name="kids"
+					required>
 
-				<button type="submit" class="button button-large">Найти</button>
+				<button type="submit" class="button button-large modal__button">Найти</button>
 			</form>
 		</section>
 	</div>
