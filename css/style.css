@@ -210,7 +210,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .section__title {
 	font-size: 30px;
 	text-transform: uppercase;
-	margin: 0 0 36px;
+	margin: 0 0 31px;
 	line-height: 36px;
 	color: #000;
 }
@@ -260,7 +260,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .nav__link {
 	display: block;
-	padding: 20px 17px;
+	padding: 21px 17px;
 }
 .nav__link-current::after {
 	content: "";
@@ -1333,7 +1333,7 @@ margin-right: 50px;
 
 .modal__date::after {
 	position: absolute;
-	content: '';
+	content: "";
 	background-image: url(/img/icon/date.svg);
 	width: 20px;
 	height: 20px;
