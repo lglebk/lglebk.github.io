@@ -191,26 +191,35 @@
 		</a>
 	</footer>
 
-	<div class="modal__container">
+	<!-- ======================Модальное окно =================================== -->
+	<div class="modal__container" style="display: none;">
 		<section class="modal modal__booking">
 			<h2 class="modal__title section__title">Поиск гостиницы в Седоне</h2>
 			<button class="modal__close-button"><span class="visually-hidden">Закрыть</span></button>
 			<br>
 			<form action="https://echo.htmlacademy.ru/" class="modal__form" method="post">
-				<label class="modal__label modal__label-arriving" for="arriving">Дата заезда:</label>
-				<input class="modal__input modal__arriving field__input" type="date" name="arriving" required>
+				<label class="modal__label modal__label-arriving " for="arriving">Дата заезда:</label>
+				<input class="modal__input modal__arriving field__input modal__date" type="date" name="arriving"
+					value="yesterday" required>
 
 				<span class="modal__description modal__description-arriving modal__description-error">Мы не можем отправить
 					вас в прошлое.</span>
 
 				<label class="modal__label modal__label-leaving" name="leaving">Дата выезда:</label>
-				<input type="date" class="modal__input modal__leaving field__input" name="leaving" required>
+				<input type="date" class="modal__input modal__leaving field__input modal__date" name="leaving" value="today"
+					required>
 				<span class="modal__description modal__description-leaving">На эти даты есть
 					свободные номера. Пока
 					есть.</span>
 
 				<label class="modal__label modal__label-adults" for="adults">Взрослые:</label>
-				<input class="modal__input modal__quantity field__input" type="number" name="adults" required>
+				<div class="quantity__field-adults quantity__field">
+					<input class="modal__input modal__quantity field__input" type="number" name="adults" required min="0"
+						max="12" value="2">
+					<button class="button__number"><span class="visually-hidden">Уменьшить</span></button>
+					<button class="button__number button__number-plus"><span
+							class="visually-hidden">Увеличить</span></button>
+				</div>
 
 
 				<label class="modal__label modal__label-kids" for="kids">Дети:
@@ -222,8 +231,13 @@
 						</div>
 					</button>
 				</label>
-				<input type="number" class="modal__input modal__quantity modal__quantity-kids field__input" name="kids"
-					required>
+				<div class="quantity__field-kids quantity__field">
+					<input type="number" class="modal__input modal__quantity field__input" name="kids" required min="0"
+						max="10" value="1">
+					<button class="button__number"><span class="visually-hidden">Уменьшить</span></button>
+					<button class="button__number button__number-plus"><span
+							class="visually-hidden">Увеличить</span></button>
+				</div>
 
 				<button type="submit" class="button button-large modal__button">Найти</button>
 			</form>
