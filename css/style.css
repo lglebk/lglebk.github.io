@@ -571,10 +571,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .filter__title {
 	font-size: 20px;
 	line-height: 26px;
+	margin-bottom: 30px;
 }
 .filter__group {
 	margin: 0;
 	padding: 0;
+	border: none;
 }
 .filter__group-price {
 	margin-left: 96px;
@@ -591,15 +593,75 @@ display: flex;
 flex-direction: column;
 margin-left: 88px;
 }
-.filter__item {
+.filter__item:not(:last-child) {
+	margin-bottom: 13px;
 }
-.facility {
+.filter__input {
 }
-.facility__input {
+
+.filter__control {
+	position: relative;
+	display: block;
+	padding-left: 39px;
 }
+
+.filter__item-mark {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	left: 0px;
+}
+
+.filter__control:hover .filter__item-mark {
+	background: rgba(255, 255, 255, 0.6);
+} 
+
+.filter__control:focus:not(:active) .filter__item-mark {
+	background: rgba(255, 255, 255, 0.6);
+	outline: 3px solid #83B3D3;
+}
+.filter__control:active .filter__item-mark {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.facility .filter__item-mark  {
+	border-radius: 4px;
+}
+.type .filter__item-mark {
+	border-radius: 50%;
+}
+.filter__input[type="checkbox"]:checked + .filter__item-mark:before {
+	position: absolute;
+	content: "";
+	background-image: url(/img/icon/Check.svg); 
+	background-repeat: no-repeat; 
+	width: 13px;
+	height: 10px;
+	left: 4px;
+	top: 6px;
+}
+.filter__input[type="radio"]:checked + .filter__item-mark:before {
+	position: absolute;
+	content: "";
+	background-color: rgba(63, 94, 114, 1); 
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	top: 5px;
+	left: 5px;
+}
+
+.filter__item-name {
+}
+
 .facility__label {
 }
 .facility__item {
+
 }
 /* ================= Price Filter ====================== */
 .filter__range {
@@ -610,26 +672,98 @@ margin-left: 88px;
 }
 .range__field {
 	display: grid;
-	grid-template-columns: 1fr 44px;
+	grid-template-columns: 100px 44px;
+	margin-bottom: 32px;
 }
 .range__input {
+	padding-left: 19px;
+	padding-top: 14px;
+	padding-bottom: 11px;
 	color: #fff;
 	background-color: transparent;
 	font-family: inherit;
 	font-size: 18px;
+	grid-column: -1/1;
+	grid-row: 1;
+	border: 2px solid #fff;
 }
+
+.range__input:hover {
+	border-color: rgba(255, 255, 255, 0.6);
+}
+
+.range__input:focus:not(:active) {
+	box-shadow: 0px 0px 0px 3px #81B3D2;
+	outline: none;
+}
+
+.range__input:active {
+	outline: none;
+	background: #756257;
+}
+
+.range__input[name="min-price"]{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.range__input[name="max-price"]{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
 .range__title {
 	opacity: 0.3;
+	z-index: 1;
+	grid-column: 2/-1;
+	grid-row: 1;
+	align-self: center;
+	font-weight: 400;
 }
 .range__slider {
 	grid-column: 1/-1;
+	
 }
 .slider {
+	width: 287px;
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 4px;
+	position: relative;
 }
 .slider__bar {
+	position: absolute;
+	height: 4px;
+	background-color: rgba(255, 255, 255, 1);
+	width: 227px;
 }
 .slider__pin {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	top: -8px;
+	border: none;
+	cursor: pointer;
 }
+
+.slider__pin:hover{
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.slider__pin:focus:not(:active) {
+outline: 3px solid #83B3D3;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.slider__pin:active {
+outline: 2px solid #83B3D3;
+box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+.pin__max {
+	right: -10px;
+}
+
 .type {
 }
 .type__input {
@@ -643,6 +777,12 @@ margin-left: 88px;
 }
 .filter__price {
 }
+
+.filter__buttons .button {
+	margin-top: 55px;
+	margin-bottom: 20px;
+}
+
 .filter__reset {
 	align-self: center;
 	font-weight: 400;
@@ -653,6 +793,19 @@ margin-left: 88px;
 	background-color: transparent;
 	border-style: none;
 }
+.filter__reset:hover {
+	opacity: 0.6;
+}
+.filter__reset:focus:not(:active) {
+	outline: 3px solid #83B3D3;
+	border-radius: 4px;
+	padding: 2px 10px;
+}
+
+.filter__reset:active {
+	opacity: 0.3;
+}
+
 .catalog {
 	padding: 0 72px;
 }
@@ -1117,6 +1270,7 @@ margin-right: 50px;
 	border-radius: 30px;
 	z-index: 1;
 	padding: 60px 70px 70px 65px;
+	box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .modal__close-button {
