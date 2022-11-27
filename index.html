@@ -126,7 +126,8 @@
 			<h2 class="visually-hidden">Поиск гостиниц</h2>
 
 			<p class="section__title">Заинтересовались?</p>
-			<p class="section__description">Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие
+			<p class="section__description interesting__description">Укажите предполагаемые даты поездки, <br> и мы покажем
+				вам лучшие
 				предложения гостиниц в Седоне</p>
 
 			<a href="#" class="interesting__button button button-secondary button-large">ПОИСК ГОСТИНИЦЫ В седоне</a>
@@ -195,47 +196,46 @@
 	<div class="modal__container" style="display: none;">
 		<section class="modal modal__booking">
 			<h2 class="modal__title section__title">Поиск гостиницы в Седоне</h2>
-			<button class="modal__close-button"><span class="visually-hidden">Закрыть</span></button>
+			<button type="button" class="modal__close-button"><span class="visually-hidden">Закрыть</span></button>
 			<br>
 			<form action="https://echo.htmlacademy.ru/" class="modal__form" method="post">
 				<label class="modal__label modal__label-arriving " for="arriving">Дата заезда:</label>
-				<input class="modal__input modal__arriving field__input modal__date" type="date" name="arriving"
-					value="yesterday" required>
+				<input class="modal__input modal__arriving field__input modal__date" type="date" id="arriving"
+					value="2020-04-27" required>
 
 				<span class="modal__description modal__description-arriving modal__description-error">Мы не можем отправить
 					вас в прошлое.</span>
 
-				<label class="modal__label modal__label-leaving" name="leaving">Дата выезда:</label>
-				<input class="modal__input modal__leaving field__input modal__date" type="date" name="leaving" value="today"
-					required>
+				<label class="modal__label modal__label-leaving">Дата выезда:</label>
+				<input class="modal__input modal__leaving field__input modal__date" type="date" name="leaving"
+					value="2021-09-01" required>
 				<span class="modal__description modal__description-leaving">На эти даты есть
 					свободные номера. Пока
 					есть.</span>
 
 				<label class="modal__label modal__label-adults" for="adults">Взрослые:</label>
 				<div class="quantity__field-adults quantity__field">
-					<input class="modal__input modal__quantity field__input" type="number" name="adults" required min="0"
-						max="12" value="2">
-					<button class="button__number"><span class="visually-hidden">Уменьшить</span></button>
-					<button class="button__number button__number-plus"><span
+					<input class="modal__input modal__quantity field__input" type="number" name="adults" id="adults" required
+						min="0" max="12" value="2">
+					<button type="button" class="button__number"><span class="visually-hidden">Уменьшить</span></button>
+					<button type="button" class="button__number button__number-plus"><span
 							class="visually-hidden">Увеличить</span></button>
 				</div>
 
 
 				<label class="modal__label modal__label-kids" for="kids">Дети:
-					<button class="modal__info">
-						<div class="modal__info-active">
-							<span class="">Укажите количество детей, которые будут с
-								вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
-							</span>
-						</div>
+					<button type="button" class="modal__info" id="kids">
+						<span class="modal__info-active">
+							Укажите количество детей, которые будут с
+							вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+						</span>
 					</button>
 				</label>
 				<div class="quantity__field-kids quantity__field">
 					<input type="number" class="modal__input modal__quantity field__input" name="kids" required min="0"
 						max="10" value="1">
-					<button class="button__number"><span class="visually-hidden">Уменьшить</span></button>
-					<button class="button__number button__number-plus"><span
+					<button type="button" class="button__number"><span class="visually-hidden">Уменьшить</span></button>
+					<button type="button" class="button__number button__number-plus"><span
 							class="visually-hidden">Увеличить</span></button>
 				</div>
 
